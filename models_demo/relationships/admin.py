@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import AppUser,UserDetails
+from . models import AppUser,UserDetails,Temp
 # Register your models here.
 
 # admin.site.register(Employee)
@@ -13,7 +13,7 @@ class AppUserAdmin(admin.ModelAdmin):
 class UserDetailsAdmin(admin.ModelAdmin):
     list_display = ['appuser','mobile_no','aadhaar_no','updated_on']
 
-# @admin.register(ABC)
-# class PageAdmin(admin.ModelAdmin):
-#     list_display = ['likes',]
+@admin.register(Temp)
+class PageAdmin(admin.ModelAdmin):
+    list_display = ['appuser','mobile_no','aadhaar_no','updated_on','likes']
 

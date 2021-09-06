@@ -23,7 +23,7 @@ class UserDetails(models.Model):
     mobile_no = models.IntegerField()
     updated_on = models.DateField(auto_now_add=True)
 
-
-# class Temp(UserDetails):
-#     user = models.OneToOneField(UserDetails,on_delete=models.CASCADE,primary_key=True)
-#     likes = models.IntegerField()
+# model inheritance and one to one relationship
+class Temp(UserDetails):
+    user = models.OneToOneField(UserDetails,on_delete=models.CASCADE,primary_key=True,parent_link=True)
+    likes = models.IntegerField()
