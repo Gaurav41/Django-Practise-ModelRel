@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import AppUser,UserDetails,Temp
+from . models import AppUser,UserDetails,Temp,Post,Product
 # Register your models here.
 
 # admin.site.register(Employee)
@@ -17,3 +17,10 @@ class UserDetailsAdmin(admin.ModelAdmin):
 class PageAdmin(admin.ModelAdmin):
     list_display = ['appuser','mobile_no','aadhaar_no','updated_on','likes']
 
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['user','post_title','post_des','post_publish_date']
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['prod_name','prod_price','ordered_by']
